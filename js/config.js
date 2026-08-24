@@ -68,8 +68,8 @@ export const CONFIG = {
 };
 
 export const ROLE_LABEL = {
-  girlfriend: '彼女役',
-  friend: '友人役',
+  girlfriend: '彼女役（女性）',
+  friend: '友人役（男性）',
 };
 
 export const SPEAKER_LABEL = {

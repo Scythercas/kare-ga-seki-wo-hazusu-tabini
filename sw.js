@@ -9,7 +9,7 @@
 // BGMまで install で待つと初回の「準備中」が体感に出るため分けている。
 // 取得前にBGMが要求された場合は fetch ハンドラがネットワークから取ってキャッシュする。
 
-const CACHE_VERSION = 'kare-v6';
+const CACHE_VERSION = 'kare-v7';
 
 // アプリシェル＋データ＋画像
 const CRITICAL = [
