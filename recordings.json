@@ -1,0 +1,103 @@
+{
+  "meta": {
+    "source": "台本.md ボイス収録リスト",
+    "schemaNotes": {
+      "recordingOrder": "収録画面での提示順（1〜10）。話者ごとにまとめてあるため voiceId 順とは一致しない。端末の持ち替えは 6→7 の1回だけ",
+      "status": "unrecorded → recorded → confirmed。recorded は未確定（プレビュー可・上書き録音可）",
+      "scriptText": "{{friendName}} は表示・収録時に置換する。voice_01 と voice_09 の2本だけが該当",
+      "runtime": "blobKey / mimeType / durationMs / recordedAt は録音時に付与される。この初期データには含めない"
+    }
+  },
+  "recordings": [
+    {
+      "voiceId": "voice_01",
+      "recordingOrder": 1,
+      "speakerRole": "girlfriend",
+      "sceneRef": "scene_01",
+      "scriptText": "あ……{{friendName}}の……友達、だよね？前に写真で見たことある気がする",
+      "emotionNote": "少し驚き＋人見知り気味の挨拶",
+      "status": "unrecorded"
+    },
+    {
+      "voiceId": "voice_02",
+      "recordingOrder": 2,
+      "speakerRole": "girlfriend",
+      "sceneRef": "scene_03",
+      "scriptText": "……ありがとう。{{friendName}}、ああいうところ雑なんだよね",
+      "emotionNote": "驚き半分・面白がる半分",
+      "status": "unrecorded"
+    },
+    {
+      "voiceId": "voice_03",
+      "recordingOrder": 3,
+      "speakerRole": "girlfriend",
+      "sceneRef": "scene_05",
+      "scriptText": "え、それ好きなの？意外と気が合うかも、私たち",
+      "emotionNote": "弾んだ声、素の笑顔",
+      "status": "unrecorded"
+    },
+    {
+      "voiceId": "voice_04",
+      "recordingOrder": 4,
+      "speakerRole": "girlfriend",
+      "sceneRef": "scene_07",
+      "scriptText": "……今日、ずっと居心地よくて。こんなこと思っちゃいけないのに、正直言うと──ちょっと惹かれてる自分がいる。……ごめん、今の忘れて",
+      "emotionNote": "罪悪感と動揺が入り混じる、小声気味",
+      "status": "unrecorded"
+    },
+    {
+      "voiceId": "voice_09",
+      "recordingOrder": 5,
+      "speakerRole": "girlfriend",
+      "sceneRef": "ending_reject",
+      "scriptText": "……さっきのは、忘れて。私、{{friendName}}のこと、ちゃんと好きだから",
+      "emotionNote": "揺れながらも決意した声",
+      "status": "unrecorded"
+    },
+    {
+      "voiceId": "voice_10",
+      "recordingOrder": 6,
+      "speakerRole": "girlfriend",
+      "sceneRef": "ending_success",
+      "scriptText": "……ねえ、今日だけの話にしたくない。私も、ちゃんと考えたい",
+      "emotionNote": "緊張と期待が混じる小声",
+      "status": "unrecorded"
+    },
+    {
+      "voiceId": "voice_05",
+      "recordingOrder": 7,
+      "speakerRole": "friend",
+      "sceneRef": "scene_08",
+      "scriptText": "な、今日は声かけてよかっただろ？またこの3人で遊ぼうぜ",
+      "emotionNote": "明るい、屈託のない声",
+      "status": "unrecorded"
+    },
+    {
+      "voiceId": "voice_06",
+      "recordingOrder": 8,
+      "speakerRole": "friend",
+      "sceneRef": "scene_08",
+      "scriptText": "……お前ら、なんかさっきから様子おかしくないか？",
+      "emotionNote": "訝しむ、低いトーン",
+      "status": "unrecorded"
+    },
+    {
+      "voiceId": "voice_07",
+      "recordingOrder": 9,
+      "speakerRole": "friend",
+      "sceneRef": "ending_bare",
+      "scriptText": "……お前、なんで彼女とそんな空気になってんの？さっきから見てりゃ分かるよ",
+      "emotionNote": "抑えた怒り、静かな失望",
+      "status": "unrecorded"
+    },
+    {
+      "voiceId": "voice_08",
+      "recordingOrder": 10,
+      "speakerRole": "friend",
+      "sceneRef": "ending_none",
+      "scriptText": "なあ、また3人で飲もうぜ。……あいつも行きたいって言ってたから",
+      "emotionNote": "日常に戻ったあとの、何気ないトーン（voice_05とは別の明るさで）",
+      "status": "unrecorded"
+    }
+  ]
+}

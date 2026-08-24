@@ -1,0 +1,152 @@
+<!doctype html>
+<html lang="ja">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<meta name="robots" content="noindex, nofollow">
+<meta name="theme-color" content="#14161c">
+<title>彼が席を外すたびに</title>
+<link rel="manifest" href="./manifest.webmanifest">
+<link rel="stylesheet" href="./css/style.css">
+</head>
+<body>
+
+<main id="app">
+
+  <!-- 起動時の読み込み -->
+  <section id="screen-boot" class="screen">
+    <div class="panel">
+      <p class="loading">読み込んでいます…</p>
+    </div>
+  </section>
+
+  <!-- タイトル／名前入力 -->
+  <section id="screen-title" class="screen hidden">
+    <div class="panel">
+      <h1 class="title">彼が席を外すたびに</h1>
+      <p class="lead">2人で1台を使って遊ぶノベルゲームです。<br>はじめに、2人ぶんの声を録音します。</p>
+      <div class="field">
+        <label for="input-name">友人役の方の名前</label>
+        <input id="input-name" type="text" maxlength="8" autocomplete="off" placeholder="例：ケンタ">
+        <p class="hint">作中で彼女役が呼びかける名前になります。<strong>録音を始めると変更できません。</strong></p>
+        <p id="name-error" class="error hidden"></p>
+      </div>
+      <button id="btn-to-mic" class="primary">録音にすすむ</button>
+      <p class="credit">背景：<a href="https://min-chi.material.jp/" target="_blank" rel="noopener noreferrer">みんちりえ</a>／BGM：<a href="https://amachamusic.chagasi.com/" target="_blank" rel="noopener noreferrer">甘茶の音楽工房</a>／効果音：<a href="https://soundeffect-lab.info/" target="_blank" rel="noopener noreferrer">効果音ラボ</a></p>
+    </div>
+  </section>
+
+  <!-- マイク権限の説明 -->
+  <section id="screen-mic" class="screen hidden">
+    <div class="panel">
+      <h2>マイクを使います</h2>
+      <p class="lead">これから10個のセリフを録音します。<br>録音した声は<strong>この端末の中だけ</strong>に保存され、どこにも送信されません。</p>
+      <ul class="notes">
+        <li>静かな場所で、端末に近づいて話してください</li>
+        <li>1つあたり30秒までです</li>
+        <li>確定する前なら何度でも録り直せます</li>
+      </ul>
+      <button id="btn-request-mic" class="primary">マイクを許可して始める</button>
+      <div id="mic-denied" class="hidden">
+        <p class="error">マイクの使用が許可されませんでした。</p>
+        <p class="hint">ブラウザのアドレスバーの鍵アイコン（またはサイト設定）からマイクを「許可」に変更し、ページを再読み込みしてください。</p>
+        <button id="btn-retry-mic" class="secondary">もう一度試す</button>
+      </div>
+    </div>
+  </section>
+
+  <!-- 録音 -->
+  <section id="screen-record" class="screen hidden">
+    <div class="panel">
+      <div class="rec-head">
+        <span id="rec-role" class="role-badge"></span>
+        <span id="rec-progress" class="progress"></span>
+      </div>
+      <p id="rec-emotion" class="emotion"></p>
+      <div id="rec-script" class="script"></div>
+      <p id="rec-status" class="rec-status"></p>
+      <div class="rec-actions">
+        <button id="btn-rec-start" class="primary">録音する</button>
+        <button id="btn-rec-stop" class="primary recording hidden">■ 停止する</button>
+        <button id="btn-rec-preview" class="secondary hidden">▶ 聞いてみる</button>
+        <button id="btn-rec-retake" class="secondary hidden">録り直す</button>
+        <button id="btn-rec-confirm" class="primary hidden">確定して次へ</button>
+      </div>
+      <p id="rec-error" class="error hidden"></p>
+    </div>
+  </section>
+
+  <!-- 持ち替え -->
+  <section id="screen-handoff" class="screen hidden">
+    <div class="panel center">
+      <h2>端末を代わってください</h2>
+      <p class="lead">ここから先は<strong id="handoff-role"></strong>の方が録音します。</p>
+      <button id="btn-handoff-next" class="primary">代わりました</button>
+    </div>
+  </section>
+
+  <!-- プレイ開始／遊びかた -->
+  <section id="screen-ready" class="screen hidden">
+    <div class="panel">
+      <h2>遊びかた</h2>
+
+      <p class="lead">あなたは<strong>友人と、その恋人と、3人で過ごす4時間</strong>の主人公です。<br>
+      友人は今日、何度か席を外します。そのたびに、彼女と二人きりになります。</p>
+
+      <div class="rule">
+        <div class="rule-row">
+          <span class="rule-key gauge-a">好感度</span>
+          <span>彼女があなたに惹かれていく度合い。<br>気遣いや共感を示す選択で上がります。</span>
+        </div>
+        <div class="rule-row">
+          <span class="rule-key gauge-w">警戒度</span>
+          <span>友人があなたたちを怪しむ度合い。<br>二人の距離が態度に出ると上がります。</span>
+        </div>
+      </div>
+
+      <p class="lead"><strong>この2つはトレードオフです。</strong><br>
+      距離を詰めるほど良い結末に近づきますが、それが表に出れば友人に気づかれます。</p>
+
+      <p class="goal">最後にたどり着く結末は<strong>4つ</strong>。<br>
+      <span class="goal-sub">あなたたち2人がどこへ着地するのかを見届けるゲームです。<br>
+      録音した10個のセリフのうち、1回で流れるのは4〜6個だけ。<br>
+      選択を変えて何度か遊ぶと、まだ聞いていない声が流れます。</span></p>
+
+      <p class="warn">端末の<strong>消音（マナーモード）を解除</strong>し、音量を上げてください。<br>2人で聞こえるようにして始めましょう。</p>
+
+      <button id="btn-start-play" class="primary">はじめる（約10分）</button>
+      <button id="btn-rerecord" class="link">録音をやり直す（全部消えます）</button>
+    </div>
+  </section>
+
+  <!-- 本編 -->
+  <section id="screen-play" class="screen hidden">
+    <div id="stage">
+      <div id="sprites">
+        <div class="sprite hidden" data-role="friend"><img alt=""><span class="fallback"></span></div>
+        <div class="sprite hidden" data-role="girlfriend"><img alt=""><span class="fallback"></span></div>
+      </div>
+      <button id="btn-debug" class="debug-toggle" title="デバッグ表示">👁</button>
+      <div id="debug" class="debug hidden"></div>
+    </div>
+
+    <div id="textbox">
+      <div id="speaker"></div>
+      <div id="body"></div>
+      <div id="tap-hint">タップで進む</div>
+      <div id="next-mark">▼</div>
+    </div>
+
+    <div id="choices" class="hidden"></div>
+
+    <div id="ending-actions" class="hidden">
+      <div id="ending-title"></div>
+      <button id="btn-replay" class="primary">もう一度遊ぶ</button>
+    </div>
+  </section>
+
+</main>
+
+<script type="module" src="./js/app.js"></script>
+</body>
+</html>

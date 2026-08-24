@@ -1,0 +1,11 @@
+# 配信用ファイル（webp / m4a / wav）だけを公開する。
+# 原本は optimize_assets.py の入力であってサイトからは読まれないため、リポジトリには入れない。
+# （ローカルには残る。手元から消さないこと）
+public/assets/bg/*.jpg
+public/assets/bg/*.jpeg
+public/assets/bgm/*.mp3
+public/assets/se/*.mp3
+public/assets/chara/**/*.png
+
+__pycache__/
+*.pyc

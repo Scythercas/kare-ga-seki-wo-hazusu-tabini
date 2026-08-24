@@ -1,0 +1,13 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 192 192" width="192" height="192">
+  <rect width="192" height="192" rx="36" fill="#14161c"/>
+  <!-- 空いた席（友人が席を外している） -->
+  <rect x="34" y="96" width="42" height="10" rx="3" fill="#3a4152"/>
+  <rect x="38" y="106" width="8" height="30" rx="3" fill="#3a4152"/>
+  <rect x="64" y="106" width="8" height="30" rx="3" fill="#3a4152"/>
+  <rect x="34" y="62" width="8" height="36" rx="3" fill="#3a4152"/>
+  <!-- 残された二人 -->
+  <circle cx="112" cy="74" r="13" fill="#c8836b"/>
+  <path d="M92 136c0-13 9-23 20-23s20 10 20 23z" fill="#c8836b"/>
+  <circle cx="148" cy="74" r="13" fill="#8d94a8"/>
+  <path d="M128 136c0-13 9-23 20-23s20 10 20 23z" fill="#8d94a8"/>
+</svg>

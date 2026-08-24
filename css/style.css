@@ -1,0 +1,273 @@
+/* 彼が席を外すたびに
+   背景：みんちりえ（https://min-chi.material.jp/）
+   立ち絵：彼女＝生成済み／友人＝未用意（プレースホルダ表示に自動で切り替わる）
+   画像は optimize_assets.py が生成した .webp を読む（設計書.md 7章・8.6） */
+
+:root {
+  --bg: #14161c;
+  --panel: #1c1f28;
+  --line: #2b3040;
+  --text: #e8e6e3;
+  --muted: #9aa0b0;
+  --accent: #c8836b;
+  --accent-dark: #a86a55;
+  --warn: #d9a441;
+  --error: #e2705f;
+}
+
+* { box-sizing: border-box; }
+
+html, body {
+  margin: 0;
+  padding: 0;
+  height: 100%;
+  background: var(--bg);
+  color: var(--text);
+  font-family: "Hiragino Sans", "Yu Gothic", "Noto Sans JP", system-ui, sans-serif;
+  line-height: 1.8;
+  -webkit-text-size-adjust: 100%;
+}
+
+#app { height: 100%; }
+
+.screen {
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+}
+.hidden { display: none !important; }
+
+/* ---------- パネル系画面 ---------- */
+
+.panel {
+  margin: auto;
+  width: 100%;
+  max-width: 30rem;
+  padding: 1.5rem 1.25rem calc(1.5rem + env(safe-area-inset-bottom));
+}
+.panel.center { text-align: center; }
+
+.title {
+  font-size: 1.6rem;
+  letter-spacing: 0.08em;
+  margin: 0 0 1.5rem;
+  font-weight: 600;
+}
+h2 { font-size: 1.2rem; margin: 0 0 1rem; font-weight: 600; }
+.lead { color: var(--text); margin: 0 0 1.25rem; }
+.hint { color: var(--muted); font-size: 0.85rem; line-height: 1.7; margin: 0.5rem 0 0; }
+.warn { color: var(--warn); font-size: 0.9rem; border: 1px solid rgba(217,164,65,0.35); border-radius: 0.5rem; padding: 0.75rem; margin: 1.25rem 0; }
+.error { color: var(--error); font-size: 0.9rem; margin: 0.5rem 0 0; }
+.loading { color: var(--muted); text-align: center; }
+/* 遊びかた画面 */
+.rule { margin: 1.25rem 0; }
+.rule-row {
+  display: flex; gap: 0.75rem; align-items: flex-start;
+  padding: 0.7rem 0; border-top: 1px solid var(--line);
+  font-size: 0.9rem; line-height: 1.7;
+}
+.rule-row:last-child { border-bottom: 1px solid var(--line); }
+.rule-key {
+  flex: 0 0 4.5rem; font-weight: 600; font-size: 0.85rem;
+  padding: 0.1rem 0; text-align: center; border-radius: 0.3rem;
+}
+.gauge-a { color: #e9a08a; background: rgba(200,131,107,0.14); }
+.gauge-w { color: #d9a441; background: rgba(217,164,65,0.14); }
+.goal {
+  border-left: 3px solid var(--accent);
+  padding: 0.2rem 0 0.2rem 0.9rem; margin: 1.25rem 0;
+}
+.goal-sub { color: var(--muted); font-size: 0.85rem; line-height: 1.8; }
+
+.credit { color: var(--muted); font-size: 0.75rem; text-align: center; margin: 1.5rem 0 0; }
+.credit a { color: var(--muted); }
+
+.notes { color: var(--muted); font-size: 0.9rem; padding-left: 1.2rem; margin: 0 0 1.5rem; }
+.notes li { margin-bottom: 0.35rem; }
+
+.field { margin-bottom: 1.5rem; }
+.field label { display: block; font-size: 0.85rem; color: var(--muted); margin-bottom: 0.4rem; }
+.field input {
+  width: 100%;
+  font-size: 1.1rem;
+  padding: 0.7rem 0.8rem;
+  border-radius: 0.5rem;
+  border: 1px solid var(--line);
+  background: var(--panel);
+  color: var(--text);
+  font-family: inherit;
+}
+.field input:focus { outline: 2px solid var(--accent); outline-offset: 1px; }
+
+button {
+  font-family: inherit;
+  font-size: 1rem;
+  cursor: pointer;
+  border-radius: 0.5rem;
+  padding: 0.85rem 1rem;
+  width: 100%;
+  border: 1px solid transparent;
+  margin-bottom: 0.6rem;
+}
+button.primary { background: var(--accent); color: #16120f; font-weight: 600; }
+button.primary:active { background: var(--accent-dark); }
+button.primary:disabled { background: var(--line); color: var(--muted); cursor: default; }
+button.secondary { background: transparent; color: var(--text); border-color: var(--line); }
+button.recording { background: var(--error); color: #fff; }
+button.link { background: none; border: none; color: var(--muted); font-size: 0.85rem; text-decoration: underline; }
+
+/* ---------- 録音画面 ---------- */
+
+.rec-head { display: flex; justify-content: space-between; align-items: center; margin-bottom: 1rem; }
+.role-badge {
+  font-size: 0.8rem;
+  padding: 0.2rem 0.6rem;
+  border-radius: 999px;
+  border: 1px solid var(--line);
+  color: var(--muted);
+}
+.progress { font-size: 0.9rem; color: var(--muted); font-variant-numeric: tabular-nums; }
+.emotion { color: var(--accent); font-size: 0.85rem; margin: 0 0 0.75rem; }
+.script {
+  background: var(--panel);
+  border: 1px solid var(--line);
+  border-radius: 0.6rem;
+  padding: 1.1rem;
+  font-size: 1.15rem;
+  line-height: 2;
+  min-height: 8rem;
+  margin-bottom: 1rem;
+}
+.rec-status { color: var(--muted); font-size: 0.9rem; min-height: 1.8rem; margin: 0 0 0.75rem; text-align: center; }
+.rec-status.live { color: var(--error); }
+
+/* ---------- 本編 ---------- */
+
+#screen-play { position: relative; }
+
+/* 重ね順を明示する。#stage に z-index を与えて重ね合わせコンテキストを作らないと、
+   中の #sprites(z-index:1) が画面全体に効き、#choices のボタンを覆って押せなくなる。 */
+#stage          { z-index: 0; }
+#textbox        { z-index: 1; }
+#choices        { z-index: 10; }
+#ending-actions { z-index: 20; }
+
+#stage {
+  flex: 1;
+  position: relative;
+  display: flex;
+  align-items: flex-end;
+  justify-content: center;
+  gap: 1.5rem;
+  padding: 1rem;
+  overflow: hidden;
+  background: #171a21 center / cover no-repeat;
+  transition: background-image 0.5s ease;
+}
+/* 背景（みんちりえ）。data-bg はシーンデータの bg 名がそのまま入る */
+#stage[data-bg="bg_station"]       { background-image: url('../public/assets/bg/bg_station.webp'); }
+#stage[data-bg="bg_cafe"]          { background-image: url('../public/assets/bg/bg_cafe.webp'); }
+#stage[data-bg="bg_town_day"]      { background-image: url('../public/assets/bg/bg_town_day.webp'); }
+#stage[data-bg="bg_town_evening"]  { background-image: url('../public/assets/bg/bg_town_evening.webp'); }
+
+/* 立ち絵の足元をテキストボックスへ自然に繋ぐための影 */
+#stage::after {
+  content: '';
+  position: absolute; left: 0; right: 0; bottom: 0; height: 35%;
+  background: linear-gradient(to bottom, rgba(10,11,15,0), rgba(10,11,15,0.55));
+  pointer-events: none;
+}
+
+#sprites {
+  position: absolute; inset: 0;
+  display: flex; gap: 0; align-items: flex-end; justify-content: center;
+  z-index: 1;
+  pointer-events: none;   /* 立ち絵はクリックを一切受けない */
+}
+
+.sprite { position: relative; height: 100%; display: flex; align-items: flex-end; }
+.sprite img { height: 100%; width: auto; display: block; filter: drop-shadow(0 0 12px rgba(0,0,0,0.45)); }
+/* 2人並ぶときは少し重ねて画面幅に収める */
+#sprites .sprite:not(.hidden) ~ .sprite:not(.hidden) { margin-left: -8%; }
+/* 立ち絵が未用意のキャラは、差分名を出すプレースホルダに切り替える */
+.sprite .fallback { display: none; }
+.sprite.missing img { display: none; }
+.sprite.missing .fallback {
+  display: flex;
+  align-items: flex-end;
+  justify-content: center;
+  width: 6.5rem;
+  min-height: 9rem;
+  padding: 0.5rem 0.3rem;
+  border-radius: 0.5rem 0.5rem 0 0;
+  background: rgba(255,255,255,0.07);
+  border: 1px solid rgba(255,255,255,0.14);
+  border-bottom: none;
+  font-size: 0.75rem;
+  color: var(--muted);
+  text-align: center;
+  line-height: 1.5;
+}
+
+.debug-toggle {
+  position: absolute; top: 0.5rem; right: 0.5rem; z-index: 3;
+  width: 2.2rem; height: 2.2rem; padding: 0; margin: 0;
+  background: rgba(0,0,0,0.35); border: 1px solid var(--line);
+  font-size: 0.9rem; line-height: 1; opacity: 0.5;
+}
+.debug {
+  position: absolute; top: 0.5rem; left: 0.5rem; z-index: 3;
+  background: rgba(0,0,0,0.6); border: 1px solid var(--line);
+  border-radius: 0.4rem; padding: 0.4rem 0.6rem;
+  font-size: 0.8rem; font-variant-numeric: tabular-nums; color: var(--warn);
+  white-space: pre; line-height: 1.5;
+}
+
+#textbox {
+  background: rgba(10,11,15,0.92);
+  border-top: 1px solid var(--line);
+  padding: 1rem 1.1rem calc(1rem + env(safe-area-inset-bottom));
+  min-height: 9rem;
+  cursor: pointer;
+  position: relative;
+}
+#speaker { color: var(--accent); font-size: 0.9rem; min-height: 1.4rem; }
+#body { font-size: 1.05rem; line-height: 1.9; }
+#body.narration { color: #cfd3dc; }
+#tap-hint {
+  position: absolute; right: 1rem; bottom: calc(0.5rem + env(safe-area-inset-bottom));
+  font-size: 0.7rem; color: var(--muted); opacity: 0.7;
+}
+/* 表示しきったときだけ出す送り記号 */
+#next-mark {
+  position: absolute; right: 1rem; top: 0.9rem;
+  font-size: 0.7rem; color: var(--accent);
+  opacity: 0; transition: opacity 0.2s;
+}
+#next-mark.ready { opacity: 1; animation: blink 1.2s ease-in-out infinite; }
+@keyframes blink { 0%, 100% { opacity: 1; } 50% { opacity: 0.25; } }
+
+#choices {
+  position: absolute; inset: 0;
+  background: rgba(10,11,15,0.82);
+  display: flex; flex-direction: column; justify-content: center;
+  gap: 0.75rem; padding: 1.25rem;
+}
+#choices button {
+  background: var(--panel);
+  border: 1px solid var(--line);
+  color: var(--text);
+  text-align: left;
+  line-height: 1.6;
+  margin: 0;
+}
+#choices button:active { border-color: var(--accent); }
+
+#ending-actions {
+  position: absolute; inset: 0;
+  background: rgba(10,11,15,0.92);
+  display: flex; flex-direction: column; justify-content: center; align-items: center;
+  padding: 1.5rem;
+}
+#ending-title { font-size: 1.2rem; margin-bottom: 1.5rem; letter-spacing: 0.06em; }
+#ending-actions button { max-width: 20rem; }

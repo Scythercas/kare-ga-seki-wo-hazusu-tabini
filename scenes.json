@@ -1,0 +1,1032 @@
+{
+  "meta": {
+    "title": "彼が席を外すたびに",
+    "source": "台本.md",
+    "generated": "scenes.yaml から build_scenes.py が生成。直接編集しないこと。"
+  },
+  "scenes": [
+    {
+      "id": "scene_01",
+      "title": "遭遇",
+      "stage": {
+        "bg": "bg_station",
+        "bgm": "bgm_daily"
+      },
+      "text": [
+        {
+          "speaker": "narration",
+          "body": "友人と二人、駅前の通りを歩いていた。特に予定があったわけではない。"
+        },
+        {
+          "speaker": "narration",
+          "body": "土曜の昼過ぎ、休日にしては人がまばらで、街全体が少し気を抜いているような時間だった。"
+        },
+        {
+          "speaker": "narration",
+          "body": "学生の頃から、こいつとはこうやって目的もなく歩くことが多かった。社会人になってから会う頻度は減ったが、顔を合わせればすぐに当時の距離感に戻る。"
+        },
+        {
+          "speaker": "narration",
+          "body": "そんな時、通りの向こうから、友人の名前を呼ぶ声がした。"
+        },
+        {
+          "speaker": "girlfriend",
+          "body": "あ……{{friendName}}の……友達、だよね？前に写真で見たことある気がする",
+          "voiceId": "voice_01",
+          "sprite": {
+            "girlfriend": "fluster"
+          }
+        },
+        {
+          "speaker": "narration",
+          "body": "写真で見たことがある、というのはこちらの台詞でもあった。何度か見せられたことがある。"
+        },
+        {
+          "speaker": "narration",
+          "body": "ただ、実物のほうがずっと表情の動く人だと思った。"
+        },
+        {
+          "speaker": "girlfriend",
+          "body": "ごめんなさい、急に声かけて。買い物の帰りで、たまたま"
+        },
+        {
+          "speaker": "narration",
+          "body": "そう言って彼女は、手に提げた袋を少しだけ持ち上げてみせた。"
+        },
+        {
+          "speaker": "narration",
+          "body": "特に意味のある仕草ではない。何か言わなければ、と思ったのだと思う。"
+        },
+        {
+          "speaker": "friend",
+          "body": "お、奇遇だな。彼女だよ。……せっかくだし、3人で少し遊んでいくか？",
+          "sprite": {
+            "friend": "normal",
+            "girlfriend": "normal"
+          }
+        },
+        {
+          "speaker": "narration",
+          "body": "彼女は迷うように、隣の友人を見上げた。"
+        },
+        {
+          "speaker": "narration",
+          "body": "断るとも、賛成するとも取れる表情だった。"
+        },
+        {
+          "speaker": "narration",
+          "body": "友人は返事を待つように、こちらを見ている。"
+        }
+      ],
+      "choice": {
+        "id": "choice_01",
+        "options": [
+          {
+            "key": "A",
+            "label": "「いいね、ちょうど暇してた」",
+            "effect": {}
+          },
+          {
+            "key": "B",
+            "label": "「お邪魔じゃないか？」",
+            "effect": {
+              "warning": -1
+            }
+          }
+        ],
+        "se": "se_select"
+      },
+      "next": "scene_02"
+    },
+    {
+      "id": "scene_02",
+      "title": "合流〜カフェ",
+      "stage": {
+        "bg": "bg_cafe"
+      },
+      "text": [
+        {
+          "speaker": "narration",
+          "body": "近くのカフェに入り、3人で他愛のない話をする。彼女は終始、友人の恋人らしく振る舞っている。表面上は、ただの三人の時間。"
+        },
+        {
+          "speaker": "friend",
+          "body": "こいつとは大学からの仲でさ、当時はよくつるんでたんだよ",
+          "sprite": {
+            "friend": "normal",
+            "girlfriend": "normal"
+          }
+        },
+        {
+          "speaker": "girlfriend",
+          "body": "へえ、意外。{{friendName}}がそんな風に懐くタイプって、あんまり想像つかないかも"
+        },
+        {
+          "speaker": "friend",
+          "body": "懐くって言い方やめろって（笑）",
+          "sprite": {
+            "friend": "smile"
+          }
+        },
+        {
+          "speaker": "narration",
+          "body": "友人が声を上げて笑う。"
+        },
+        {
+          "speaker": "girlfriend",
+          "body": "だって、私の前だとけっこう気を張ってるもん。今日みたいに笑ってるの、あんまり見ないし"
+        },
+        {
+          "speaker": "friend",
+          "body": "そんなことねえだろ",
+          "sprite": {
+            "friend": "normal"
+          }
+        },
+        {
+          "speaker": "narration",
+          "body": "彼女は笑って、それ以上は言わなかった。",
+          "sprite": {
+            "girlfriend": "smile"
+          }
+        },
+        {
+          "speaker": "narration",
+          "body": "運ばれてきたコーヒーに口をつけながら、彼女がこちらを見る。"
+        },
+        {
+          "speaker": "girlfriend",
+          "body": "大学のとき、どんな感じだったんですか。この人"
+        },
+        {
+          "speaker": "narration",
+          "body": "その質問は友人にではなく、明確にこちらへ向けられていた。"
+        },
+        {
+          "speaker": "narration",
+          "body": "友人は「余計なこと言うなよ」と笑いながら、まんざらでもない顔をしている。"
+        },
+        {
+          "speaker": "narration",
+          "body": "思い出話をいくつか話すと、彼女は声を出して笑った。",
+          "sprite": {
+            "girlfriend": "laugh"
+          }
+        },
+        {
+          "speaker": "narration",
+          "body": "さっきまでの、恋人の隣にいる時の笑い方とは、少しだけ違っていた。"
+        },
+        {
+          "speaker": "friend",
+          "body": "な、こいつ話すの上手いだろ。昔からそうなんだよ",
+          "sprite": {
+            "friend": "smile"
+          }
+        },
+        {
+          "speaker": "narration",
+          "body": "友人は満足そうにそう言って、それきりスマホに目を落とした。",
+          "sprite": {
+            "friend": "normal"
+          }
+        },
+        {
+          "speaker": "girlfriend",
+          "body": "いいなあ、そういうの。私、大学のときの友達とはもう全然会わなくて"
+        },
+        {
+          "speaker": "friend",
+          "body": "連絡すりゃいいじゃん"
+        },
+        {
+          "speaker": "girlfriend",
+          "body": "そういうもんじゃないでしょ"
+        },
+        {
+          "speaker": "narration",
+          "body": "彼女はそれきり、窓の外に目をやった。",
+          "sprite": {
+            "girlfriend": "away"
+          }
+        },
+        {
+          "speaker": "narration",
+          "body": "その横顔を、友人は見ていなかった。"
+        },
+        {
+          "speaker": "narration",
+          "body": "何も、変なことは起きていない。ただの三人の午後だった。"
+        }
+      ],
+      "next": "scene_03"
+    },
+    {
+      "id": "scene_03",
+      "title": "離脱①（トイレ）",
+      "stage": {
+        "bg": "bg_cafe"
+      },
+      "text": [
+        {
+          "speaker": "narration",
+          "body": "「ちょっとトイレ」と友人が席を立つ。残された2人に、少し気まずいような、そうでもないような空気が流れる。"
+        },
+        {
+          "speaker": "narration",
+          "body": "初対面の相手と二人きりになるのは、それが誰であっても少し落ち着かない。"
+        },
+        {
+          "speaker": "friend",
+          "body": "わりい、店員さん呼んどいてくれる？水もらいたいから",
+          "sprite": {
+            "friend": "normal",
+            "girlfriend": "normal"
+          }
+        },
+        {
+          "speaker": "narration",
+          "body": "彼女は一瞬だけ、その背中を目で追った。",
+          "sprite": {
+            "friend": null
+          }
+        },
+        {
+          "speaker": "narration",
+          "body": "「呼んどいて」と言われたのが自分なのか、こちらなのか、判断がつかなかったのだと思う。"
+        },
+        {
+          "speaker": "narration",
+          "body": "三人ぶんのグラスが並んだテーブルに、二人だけが残された。"
+        },
+        {
+          "speaker": "narration",
+          "body": "会話が、ふつりと途切れる。"
+        },
+        {
+          "speaker": "girlfriend",
+          "body": "……あ、"
+        },
+        {
+          "speaker": "narration",
+          "body": "彼女が小さく手を挙げかけて、途中でやめた。"
+        },
+        {
+          "speaker": "narration",
+          "body": "店員がこちらへ歩いてくる。あと数歩で、テーブルの横に着く。"
+        }
+      ],
+      "choice": {
+        "id": "choice_03",
+        "options": [
+          {
+            "key": "A",
+            "label": "「（店員に）すみません、お水いただけますか」",
+            "effect": {
+              "affection": 1
+            }
+          },
+          {
+            "key": "B",
+            "label": "何も言わず様子を見る",
+            "effect": {}
+          }
+        ],
+        "se": "se_select"
+      },
+      "after": [
+        {
+          "speaker": "girlfriend",
+          "body": "……ありがとう。{{friendName}}、ああいうところ雑なんだよね",
+          "voiceId": "voice_02",
+          "sprite": {
+            "girlfriend": "smug"
+          },
+          "condition": {
+            "choice": "choice_03",
+            "equals": "A"
+          }
+        },
+        {
+          "speaker": "narration",
+          "body": "その「ありがとう」は、水のことだけを指しているようには聞こえなかった。",
+          "condition": {
+            "choice": "choice_03",
+            "equals": "A"
+          }
+        }
+      ],
+      "next": "scene_04"
+    },
+    {
+      "id": "scene_04",
+      "title": "再開①（街を歩く）",
+      "stage": {
+        "bg": "bg_cafe"
+      },
+      "text": [
+        {
+          "speaker": "narration",
+          "body": "友人が戻ってくる。テーブルには新しい水のグラスが置かれていて、「サンキュ」とだけ言って座り直した。",
+          "sprite": {
+            "friend": "normal"
+          },
+          "condition": {
+            "choice": "choice_03",
+            "equals": "A"
+          }
+        },
+        {
+          "speaker": "narration",
+          "body": "友人が戻ってくる。頼まれていた水はそのままで、「あれ、水は？」と自分で店員を呼んだ。",
+          "sprite": {
+            "friend": "normal"
+          },
+          "condition": {
+            "choice": "choice_03",
+            "equals": "B"
+          }
+        },
+        {
+          "speaker": "narration",
+          "body": "店を出て、3人で街をぶらぶらする。特に目的はないが、それが逆に心地よい。",
+          "bg": "bg_town_day"
+        },
+        {
+          "speaker": "narration",
+          "body": "歩く並びは自然と入れ替わって、友人が真ん中になったり、こちらが真ん中になったりを繰り返した。"
+        },
+        {
+          "speaker": "narration",
+          "body": "信号で立ち止まるたび、会話の相手も少しずつ入れ替わっていく。"
+        },
+        {
+          "speaker": "narration",
+          "body": "雑貨屋の前で彼女が足を止め、友人が「なんかあった？」と後ろから覗き込む。"
+        },
+        {
+          "speaker": "narration",
+          "body": "そういう場面では、こちらは自然と一歩下がった位置にいた。"
+        },
+        {
+          "speaker": "narration",
+          "body": "それが正しい距離だと、思っていた。"
+        },
+        {
+          "speaker": "narration",
+          "body": "三人でいるはずなのに、会話が二人ずつに分かれる時間が、少しずつ増えていた。"
+        },
+        {
+          "speaker": "friend",
+          "body": "そういや、次の飲み会いつだっけ？お前も来いよ"
+        },
+        {
+          "speaker": "girlfriend",
+          "body": "私も誘ってよ、たまには"
+        },
+        {
+          "speaker": "friend",
+          "body": "お前は俺と来ればいいだろ"
+        },
+        {
+          "speaker": "girlfriend",
+          "body": "そういうことじゃなくて"
+        },
+        {
+          "speaker": "narration",
+          "body": "友人は笑って流したが、彼女はもう一度、こちらを見て言った。"
+        },
+        {
+          "speaker": "girlfriend",
+          "body": "ちゃんと、誘ってよ",
+          "sprite": {
+            "girlfriend": "normal"
+          }
+        },
+        {
+          "speaker": "narration",
+          "body": "軽い口調だったが、彼女の言葉には少しだけ芯があった。"
+        }
+      ],
+      "choice": {
+        "id": "choice_04",
+        "options": [
+          {
+            "key": "A",
+            "label": "「お前が決めろよ」と友人に話を振り返す",
+            "effect": {}
+          },
+          {
+            "key": "B",
+            "label": "「じゃあ、次は声かけますね」と彼女に直接返事をする",
+            "effect": {
+              "warning": 1
+            }
+          }
+        ],
+        "se": "se_select"
+      },
+      "after": [
+        {
+          "speaker": "narration",
+          "body": "友人が一瞬だけ、こちらを見た。それだけだった。",
+          "condition": {
+            "choice": "choice_04",
+            "equals": "B"
+          }
+        }
+      ],
+      "next": "scene_05"
+    },
+    {
+      "id": "scene_05",
+      "title": "離脱②（電話）",
+      "stage": {
+        "bg": "bg_town_day"
+      },
+      "text": [
+        {
+          "speaker": "narration",
+          "body": "友人のスマホが鳴る。「あ、ちょっと出るわ、仕事の電話」と少し離れた場所へ行ってしまう。",
+          "sprite": {
+            "friend": null
+          }
+        },
+        {
+          "speaker": "narration",
+          "body": "友人が席を外すのは、今日これで二度目だった。"
+        },
+        {
+          "speaker": "narration",
+          "body": "残された2人はなんとなく歩道の端に寄って、友人の背中が見える距離で足を止める。"
+        },
+        {
+          "speaker": "girlfriend",
+          "body": "休日でも鳴るんだよね、あの人の電話",
+          "sprite": {
+            "girlfriend": "normal"
+          }
+        },
+        {
+          "speaker": "narration",
+          "body": "呆れたような、慣れたような言い方だった。"
+        },
+        {
+          "speaker": "narration",
+          "body": "話すことがなくなって、視線が近くの店先へ流れる。"
+        },
+        {
+          "speaker": "narration",
+          "body": "彼女もそちらを見ていた。ショーウィンドウに、ずいぶん昔から続いているシリーズの新作が並んでいる。"
+        },
+        {
+          "speaker": "girlfriend",
+          "body": "あ、これ。私、昔から好きなんだ"
+        },
+        {
+          "speaker": "narration",
+          "body": "彼女が口にしたタイトルには、覚えがあった。学生の頃、こちらもひととおり通っている。"
+        },
+        {
+          "speaker": "girlfriend",
+          "body": "言われるんだよね、いつも。まだやってるの、って",
+          "sprite": {
+            "girlfriend": "bored"
+          }
+        },
+        {
+          "speaker": "narration",
+          "body": "少しだけ、拗ねたような言い方だった。"
+        },
+        {
+          "speaker": "narration",
+          "body": "友人はまだ電話の途中で、こちらに背を向けたまま何度も頷いている。"
+        }
+      ],
+      "choice": {
+        "id": "choice_05",
+        "options": [
+          {
+            "key": "A",
+            "label": "彼女の好きなものに素直に共感する",
+            "effect": {
+              "affection": 1
+            }
+          },
+          {
+            "key": "B",
+            "label": "当たり障りなく相槌を打つ",
+            "effect": {}
+          }
+        ],
+        "se": "se_select"
+      },
+      "after": [
+        {
+          "speaker": "girlfriend",
+          "body": "え、それ好きなの？意外と気が合うかも、私たち",
+          "voiceId": "voice_03",
+          "sprite": {
+            "girlfriend": "laugh"
+          },
+          "condition": {
+            "choice": "choice_05",
+            "equals": "A"
+          }
+        },
+        {
+          "speaker": "narration",
+          "body": "少しだけ声が大きくなって、彼女は自分でそれに気づいたように口をつぐんだ。",
+          "condition": {
+            "choice": "choice_05",
+            "equals": "A"
+          }
+        }
+      ],
+      "next": "scene_06"
+    },
+    {
+      "id": "scene_06",
+      "title": "再開②（夕方の移動）",
+      "stage": {
+        "bg": "bg_town_evening",
+        "bgm": "bgm_evening"
+      },
+      "text": [
+        {
+          "speaker": "narration",
+          "body": "電話を終えた友人が戻ってくる。日が傾き始める。解散の時間が近づいていた。",
+          "sprite": {
+            "friend": "normal"
+          }
+        },
+        {
+          "speaker": "narration",
+          "body": "3人で歩く速度が、さっきより少しだけ落ちていた。誰も帰ろうとは言い出さない。"
+        },
+        {
+          "speaker": "girlfriend",
+          "body": "……もう夕方だね"
+        },
+        {
+          "speaker": "narration",
+          "body": "誰にともなく彼女がそう言って、それきり少しの間、誰も返事をしなかった。"
+        },
+        {
+          "speaker": "friend",
+          "body": "なんか今日、俺そんな喋ってなくね？お前らだけで盛り上がってたし",
+          "sprite": {
+            "friend": "normal"
+          }
+        },
+        {
+          "speaker": "narration",
+          "body": "彼女の表情が、わずかに曇った。",
+          "sprite": {
+            "girlfriend": "bored"
+          }
+        },
+        {
+          "speaker": "narration",
+          "body": "悪気のない声だった。責めるつもりも、疑うつもりもない。"
+        },
+        {
+          "speaker": "narration",
+          "body": "ただ、その言葉が落ちた場所だけ、空気がわずかに固くなった。"
+        },
+        {
+          "speaker": "narration",
+          "body": "彼女は何も言わず、視線を足元に落としている。"
+        },
+        {
+          "speaker": "narration",
+          "body": "だからこそ、何と返せばいいのか分からなかった。"
+        },
+        {
+          "speaker": "narration",
+          "body": "この沈黙が、一番まずかった。"
+        },
+        {
+          "speaker": "narration",
+          "body": "ここでどう答えるかで、今日の終わり方が決まる気がした。"
+        }
+      ],
+      "choice": {
+        "id": "choice_06",
+        "options": [
+          {
+            "key": "A",
+            "label": "「そんなことないだろ」",
+            "effect": {}
+          },
+          {
+            "key": "B",
+            "label": "苦笑いだけで流す",
+            "effect": {
+              "warning": 1
+            }
+          }
+        ],
+        "se": "se_select"
+      },
+      "next": "scene_07"
+    },
+    {
+      "id": "scene_07",
+      "title": "離脱③（売店）",
+      "stage": {
+        "bg": "bg_town_evening"
+      },
+      "text": [
+        {
+          "speaker": "narration",
+          "body": "「飲み物買ってくる」と友人が売店の列に並ぶ。",
+          "sprite": {
+            "friend": null
+          }
+        },
+        {
+          "speaker": "narration",
+          "body": "夕方の売店は思ったより混んでいて、友人の順番はまだ先だった。"
+        },
+        {
+          "speaker": "narration",
+          "body": "何を買うか決めていないらしく、列の途中で何度も棚の方を見ている。"
+        },
+        {
+          "speaker": "narration",
+          "body": "今日何度目かの、二人だけの時間。"
+        },
+        {
+          "speaker": "narration",
+          "body": "これまでと違って、どちらも会話を探そうとしなかった。"
+        },
+        {
+          "speaker": "narration",
+          "body": "沈黙が気まずくないことのほうが、たぶん問題だった。"
+        },
+        {
+          "speaker": "narration",
+          "body": "彼女は、列に並ぶ友人の背中をしばらく見ていた。"
+        },
+        {
+          "speaker": "narration",
+          "body": "何か言おうとして、やめて、また言おうとした。"
+        },
+        {
+          "speaker": "narration",
+          "body": "それから、こちらを見ないまま口を開く。"
+        },
+        {
+          "speaker": "narration",
+          "body": "彼女の表情が、今までと少し違う。",
+          "bgm": "bgm_honne"
+        },
+        {
+          "speaker": "girlfriend",
+          "body": "……今日、ずっと居心地よくて。こんなこと思っちゃいけないのに、正直言うと──ちょっと惹かれてる自分がいる。……ごめん、今の忘れて",
+          "voiceId": "voice_04",
+          "sprite": {
+            "girlfriend": "away"
+          }
+        },
+        {
+          "speaker": "narration",
+          "body": "言い終えてから、彼女は自分の言葉に驚いたような顔をした。"
+        },
+        {
+          "speaker": "narration",
+          "body": "忘れられるようなことなら、彼女も最初から言わなかったはずだった。"
+        },
+        {
+          "speaker": "narration",
+          "body": "売店の列は、まだ動かない。"
+        }
+      ],
+      "choice": {
+        "id": "choice_07",
+        "options": [
+          {
+            "key": "A",
+            "label": "気持ちに応える言葉を返す",
+            "effect": {
+              "affection": 3,
+              "warning": 1
+            }
+          },
+          {
+            "key": "B",
+            "label": "一歩引いて流す",
+            "effect": {
+              "affection": 1
+            }
+          },
+          {
+            "key": "C",
+            "label": "はっきり距離を置く",
+            "effect": {
+              "affection": -1
+            }
+          }
+        ],
+        "se": "se_select"
+      },
+      "next": "scene_08"
+    },
+    {
+      "id": "scene_08",
+      "title": "解散前",
+      "stage": {
+        "bg": "bg_town_evening",
+        "bgm": "bgm_evening"
+      },
+      "text": [
+        {
+          "speaker": "narration",
+          "body": "売店の列から友人が戻ってくる。両手にペットボトル。",
+          "sprite": {
+            "friend": "normal"
+          }
+        },
+        {
+          "speaker": "narration",
+          "body": "「めっちゃ並んだわ」と言いながら、一本をこちらに放って寄越した。"
+        },
+        {
+          "speaker": "narration",
+          "body": "受け取ったペットボトルの冷たさが、手のひらに現実を戻してくる。"
+        },
+        {
+          "speaker": "narration",
+          "body": "さっきの言葉の余韻が、まだ二人の間に残っている。"
+        },
+        {
+          "speaker": "narration",
+          "body": "彼女はもう、普通の顔をしていた。少なくとも、そう見えるようにしていた。"
+        },
+        {
+          "speaker": "narration",
+          "body": "この数秒の自分たちを、友人は当然、見ている。"
+        }
+      ],
+      "choice": {
+        "id": "choice_08",
+        "options": [
+          {
+            "key": "A",
+            "label": "何事もなかったように友人へ歩み寄る",
+            "effect": {}
+          },
+          {
+            "key": "B",
+            "label": "彼女と目を合わせたまま、一瞬動けない",
+            "effect": {
+              "warning": 1
+            }
+          }
+        ],
+        "se": "se_select"
+      },
+      "after": [
+        {
+          "speaker": "narration",
+          "body": "3人で駅の方へ歩き出す。今日はここで終わりだ、という空気になっていた。"
+        },
+        {
+          "speaker": "narration",
+          "body": "来た時と同じ道のはずなのに、行きよりずいぶん短く感じた。"
+        },
+        {
+          "speaker": "narration",
+          "body": "信号が変わるのを待つ間、友人がこちらを向いた。"
+        },
+        {
+          "speaker": "friend",
+          "body": "な、今日は声かけてよかっただろ？またこの3人で遊ぼうぜ",
+          "voiceId": "voice_05",
+          "sprite": {
+            "friend": "normal",
+            "girlfriend": "normal"
+          },
+          "condition": {
+            "var": "warning",
+            "op": "<",
+            "value": "WARNING_THRESHOLD"
+          }
+        },
+        {
+          "speaker": "friend",
+          "body": "……お前ら、なんかさっきから様子おかしくないか？",
+          "voiceId": "voice_06",
+          "sprite": {
+            "friend": "suspicious",
+            "girlfriend": "bored"
+          },
+          "condition": {
+            "var": "warning",
+            "op": ">=",
+            "value": "WARNING_THRESHOLD"
+          }
+        }
+      ],
+      "next": [
+        {
+          "condition": {
+            "var": "warning",
+            "op": ">=",
+            "value": "WARNING_THRESHOLD"
+          },
+          "to": "ending_bare"
+        },
+        {
+          "condition": {
+            "var": "affection",
+            "op": "<",
+            "value": "AFFECTION_LOW"
+          },
+          "to": "ending_none"
+        },
+        {
+          "condition": {
+            "var": "affection",
+            "op": "<",
+            "value": "AFFECTION_HIGH"
+          },
+          "to": "ending_reject"
+        },
+        {
+          "to": "ending_success"
+        }
+      ]
+    },
+    {
+      "id": "ending_bare",
+      "title": "①バレエンド",
+      "isEnding": true,
+      "stage": {
+        "bg": "bg_town_evening",
+        "bgm": null
+      },
+      "text": [
+        {
+          "speaker": "narration",
+          "body": "その場は笑って誤魔化した。"
+        },
+        {
+          "speaker": "narration",
+          "body": "だが解散の間際、彼女が先に歩き出したあと、友人が不意に足を止めた。",
+          "sprite": {
+            "girlfriend": null
+          }
+        },
+        {
+          "speaker": "friend",
+          "body": "……お前、なんで彼女とそんな空気になってんの？さっきから見てりゃ分かるよ",
+          "voiceId": "voice_07",
+          "sprite": {
+            "friend": "cold"
+          }
+        },
+        {
+          "speaker": "narration",
+          "body": "何と答えたのかは、あまり覚えていない。"
+        },
+        {
+          "speaker": "narration",
+          "body": "ただ、否定の言葉が最後まで出てこなかったことだけは覚えている。"
+        },
+        {
+          "speaker": "narration",
+          "body": "その日を境に、友人との連絡は途絶えた。"
+        },
+        {
+          "speaker": "narration",
+          "body": "友人と彼女が別れたらしいと共通の知人から聞いたのは、それからずっと後のことだった。"
+        }
+      ]
+    },
+    {
+      "id": "ending_none",
+      "title": "②進展なしエンド",
+      "isEnding": true,
+      "stage": {
+        "bg": "bg_town_day",
+        "bgm": "bgm_daily"
+      },
+      "text": [
+        {
+          "speaker": "narration",
+          "body": "それから数週間が過ぎた。あの日のことは、結局誰も口にしないままだった。",
+          "sprite": {
+            "friend": null,
+            "girlfriend": null
+          }
+        },
+        {
+          "speaker": "friend",
+          "body": "なあ、また3人で飲もうぜ。……あいつも行きたいって言ってたから",
+          "voiceId": "voice_08",
+          "sprite": {
+            "friend": "normal"
+          }
+        },
+        {
+          "speaker": "narration",
+          "body": "彼女とは、結局それ以上でもそれ以下でもなかった。何も起こらないまま、日常が戻っていく。"
+        },
+        {
+          "speaker": "narration",
+          "body": "あの日の4時間が特別だったのかどうかも、今となっては分からない。"
+        },
+        {
+          "speaker": "narration",
+          "body": "それでよかったのだと、今は思う。"
+        }
+      ]
+    },
+    {
+      "id": "ending_reject",
+      "title": "③拒否エンド",
+      "isEnding": true,
+      "stage": {
+        "bg": "bg_town_evening",
+        "bgm": "bgm_ending"
+      },
+      "text": [
+        {
+          "speaker": "narration",
+          "body": "友人が店の前で足を止め、ショーウィンドウを覗き込んでいる。その短い間だった。",
+          "sprite": {
+            "friend": null
+          }
+        },
+        {
+          "speaker": "narration",
+          "body": "彼女はこちらを見ずに、はっきりとした声で言った。"
+        },
+        {
+          "speaker": "girlfriend",
+          "body": "……さっきのは、忘れて。私、{{friendName}}のこと、ちゃんと好きだから",
+          "voiceId": "voice_09",
+          "sprite": {
+            "girlfriend": "away"
+          }
+        },
+        {
+          "speaker": "narration",
+          "body": "彼女の言葉に、それ以上何も言えなかった。芽生えかけた何かは、彼女自身の意思で終わった。"
+        },
+        {
+          "speaker": "narration",
+          "body": "戻ってきた友人に、彼女はいつも通りの顔で笑いかけた。"
+        },
+        {
+          "speaker": "narration",
+          "body": "その横で、こちらだけがうまく笑えなかった。"
+        }
+      ]
+    },
+    {
+      "id": "ending_success",
+      "title": "④成功エンド",
+      "isEnding": true,
+      "stage": {
+        "bg": "bg_town_evening",
+        "bgm": "bgm_ending"
+      },
+      "text": [
+        {
+          "speaker": "narration",
+          "body": "別れ際、友人が少し先を歩いていったあと、彼女が一歩だけこちらに近づいた。",
+          "sprite": {
+            "friend": null
+          }
+        },
+        {
+          "speaker": "girlfriend",
+          "body": "……ねえ、今日だけの話にしたくない。私も、ちゃんと考えたい",
+          "voiceId": "voice_10",
+          "sprite": {
+            "girlfriend": "fluster"
+          }
+        },
+        {
+          "speaker": "narration",
+          "body": "4時間前には想像もしていなかった感情を抱えたまま、3人での一日が終わる。何かが、確かに変わってしまった。"
+        },
+        {
+          "speaker": "narration",
+          "body": "連絡先を交換したわけでもない。約束をしたわけでもない。"
+        },
+        {
+          "speaker": "narration",
+          "body": "それでも、次に3人で会う日のことを、もう考えていた。"
+        },
+        {
+          "speaker": "narration",
+          "body": "──彼がまた、席を外すときのことを。"
+        }
+      ]
+    }
+  ]
+}
